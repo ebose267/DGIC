@@ -171,35 +171,21 @@
     pointer-events: auto;
   }
 
-  /* Weird Shape Container - FIXED */
+  /* Weird Shape Container */
   .menu-shape {
     position: relative;
     width: min(90vw, 500px);
-    height: auto;
-    max-height: 85vh;
+    min-height: 400px;
+    max-height: 80vh;
     overflow-y: auto;
-    overflow-x: hidden;
-    padding: 60px 32px 40px;
+    padding: 40px 32px;
     background: var(--white);
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     animation: morphShape 8s ease-in-out infinite;
     box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
-    gap: 4px;
-  }
-
-  /* Custom scrollbar for menu */
-  .menu-shape::-webkit-scrollbar {
-    width: 6px;
-  }
-  .menu-shape::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.05);
-    border-radius: 10px;
-  }
-  .menu-shape::-webkit-scrollbar-thumb {
-    background: var(--orange);
-    border-radius: 10px;
+    gap: 8px;
   }
 
   @keyframes morphShape {
@@ -225,7 +211,6 @@
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
-    z-index: 10;
   }
   .menu-close:hover { background: var(--orange-pale); color: var(--orange); }
 
@@ -233,17 +218,17 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    margin-top: 16px;
+    gap: 4px;
+    margin-top: 20px;
   }
 
   .menu-links a {
     text-decoration: none;
     font-family: 'Syne', sans-serif;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 20px;
     color: var(--dark);
-    padding: 12px 20px;
+    padding: 14px 20px;
     border-radius: 12px;
     transition: all 0.2s;
     display: block;
@@ -260,32 +245,18 @@
     background: var(--orange) !important;
     color: white !important;
     text-align: center;
-    margin-top: 8px;
+    margin-top: 12px;
   }
   .menu-cta:hover {
     background: var(--orange-deep) !important;
     transform: translateX(4px) !important;
   }
 
-  /* Mobile-specific menu adjustments */
-  @media (max-width: 768px) {
-    .menu-shape {
-      width: 92vw;
-      max-height: 88vh;
-      padding: 56px 24px 32px;
-    }
-    
-    .menu-links a {
-      font-size: 16px;
-      padding: 11px 18px;
-    }
-  }
-
   /* ── PAGE SYSTEM ── */
   .page {
     display: none;
     min-height: 100vh;
-    padding-top: 64px;
+    padding-top: 64px; /* Account for fixed nav */
   }
 
   .page.active {
@@ -1333,7 +1304,7 @@
     color: rgba(255,255,255,0.6);
   }
 
-  /* ── FOOTER (FIXED CONTRAST) ── */
+  /* ── FOOTER ── */
   footer {
     background: var(--dark);
     padding: 40px 5%;
@@ -1357,36 +1328,11 @@
     color: white;
   }
 
-  .footer-tagline { 
-    font-size: 13px; 
-    color: rgba(255,255,255,0.75);
-    margin-bottom: 20px; 
-  }
-
-  .footer-nav { 
-    display: flex; 
-    gap: 24px; 
-    justify-content: center; 
-    flex-wrap: wrap; 
-    margin-bottom: 24px; 
-  }
-
-  .footer-nav a { 
-    font-size: 13px; 
-    color: rgba(255,255,255,0.85);
-    text-decoration: none; 
-    transition: color 0.2s; 
-    cursor: pointer; 
-  }
-
-  .footer-nav a:hover { 
-    color: var(--orange-mid); 
-  }
-
-  .footer-copy { 
-    font-size: 12px; 
-    color: rgba(255,255,255,0.6);
-  }
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .footer-nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+  .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; cursor: pointer; }
+  .footer-nav a:hover { color: var(--orange-mid); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
@@ -1441,7 +1387,6 @@
     <div class="menu-shape">
       <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
       <ul class="menu-links">
-        <li><a data-page="home">Home</a></li>
         <li><a data-page="about">About</a></li>
         <li><a data-page="tracks">Tracks</a></li>
         <li><a data-page="phases">How It Works</a></li>
@@ -1449,7 +1394,6 @@
         <li><a data-page="timeline">Timeline</a></li>
         <li><a data-page="ideas">Ideas</a></li>
         <li><a data-page="eligibility">Eligibility</a></li>
-        <li><a data-page="judging">Judging</a></li>
         <li><a data-page="faq">FAQ</a></li>
         <li><a data-page="contact" class="menu-cta">Contact</a></li>
       </ul>
@@ -1459,6 +1403,7 @@
 
 <!-- HOME PAGE -->
 <div id="home" class="page active">
+  <!-- HERO -->
   <section class="hero" id="top">
     <div class="hero-badge">Registrations Now Open</div>
     <p class="hero-eyebrow">NUESA UNIBEN · University of Benin</p>
@@ -1502,6 +1447,7 @@
     </div>
   </section>
 
+  <!-- COUNTDOWN -->
   <div class="countdown-section">
     <div class="countdown-inner">
       <p class="countdown-label">Grand Finale Countdown</p>
@@ -1692,6 +1638,7 @@
       <p class="section-body">No team builds anything before their problem has been evaluated. That's the rule. That's why this edition is different.</p>
 
       <div class="phases-wrap fade-up">
+
         <div class="phase-row">
           <div class="phase-left">
             <div class="phase-bubble">1</div>
@@ -1746,6 +1693,7 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -2090,6 +2038,7 @@
       <p class="section-body">If something isn't covered here, reach out to the contacts below.</p>
 
       <div class="faq-list fade-up">
+
         <div class="faq-item">
           <button class="faq-question">I'm not an engineering student. Can I still compete?<span class="faq-icon">+</span></button>
           <div class="faq-answer">Yes. This edition is open to all UNIBEN students regardless of faculty. A medical student who understands a health problem, paired with an engineering student who can build the solution, is explicitly encouraged. Mixed-faculty teams are eligible for a dedicated recognition award on top of the standard prizes.</div>
@@ -2134,6 +2083,7 @@
           <button class="faq-question">Can I compete in both tracks?<span class="faq-icon">+</span></button>
           <div class="faq-answer">Innovation Challenge registration has closed (May 30). Science & Mathematics registration is open until June 6. If you registered for the Innovation Challenge before May 30, you are also eligible to register for the Science & Mathematics Competition separately — provided you meet the eligibility criteria (100-level or 300-level student).</div>
         </div>
+
       </div>
     </div>
   </section>
@@ -2197,23 +2147,19 @@
 <script>
   // Page Navigation System
   function showPage(pageId) {
+    // Hide all pages
     document.querySelectorAll('.page').forEach(page => {
       page.classList.remove('active');
     });
     
+    // Show requested page
     document.getElementById(pageId).classList.add('active');
     
+    // Scroll to top
     window.scrollTo(0, 0);
     
+    // Close mobile menu if open
     closeMenu();
-    
-    // Re-trigger fade-up animations for new page
-    setTimeout(() => {
-      document.querySelectorAll('.page.active .fade-up').forEach(el => {
-        el.classList.remove('visible');
-        void el.offsetWidth; // Force reflow
-      });
-    }, 10);
   }
 
   // Setup navigation event listeners
@@ -2250,6 +2196,7 @@
     if (e.target === menuOverlay) closeMenu();
   });
   
+  // Close on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && menuOverlay.classList.contains('active')) {
       closeMenu();
@@ -2299,12 +2246,14 @@
     });
   }, { threshold: 0.1 });
 
-  function observeFadeUps() {
-    document.querySelectorAll('.fade-up').forEach(function(el) {
-      observer.observe(el);
-    });
-  }
-  observeFadeUps();
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    observer.observe(el);
+  });
+  
+  // Initialize: trigger fade-in for visible elements on load
+  document.querySelectorAll('.fade-up.visible').forEach(el => {
+    el.classList.add('visible');
+  });
 </script>
 
 </body>
