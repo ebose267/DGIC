@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daddy G.O Innovation Challenge 4.0 — NUESA UNIBEN 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #E8720C;
+    --orange-deep: #C05A08;
+    --orange-pale: #FFF3EB;
+    --orange-mid: #F5A05A;
+    --green: #3D7A1F;
+    --green-light: #EEF6E7;
+    --green-mid: #5FA832;
+    --dark: #111111;
+    --dark2: #1E1E1E;
+    --mid: #444444;
+    --muted: #777777;
+    --border: #E5E5E5;
+    --bg: #FAFAF8;
+    --white: #FFFFFF;
+    --grid-blue: rgba(180, 210, 240, 0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+
+  /* Grid texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(var(--grid-blue) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-blue) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  * { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1.5px solid var(--border);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--orange);
+  }
+
+  .nav-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .nav-title span { color: var(--orange); display: block; font-size: 11px; font-weight: 400; font-family: 'DM Sans', sans-serif; letter-spacing: 0.04em; }
+
+  .nav-links {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .nav-links a:hover { background: var(--orange-pale); color: var(--orange-deep); }
+
+  .nav-cta {
+    background: var(--orange) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    padding: 8px 18px !important;
+  }
+
+  .nav-cta:hover { background: var(--orange-deep) !important; color: white !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 5% 60px;
+    overflow: hidden;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-light);
+    border: 1.5px solid #B8DCA0;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 32px;
+  }
+
+  .hero-badge::before { content: ''; width: 7px; height: 7px; background: var(--green-mid); border-radius: 50%; animation: pulse 2s infinite; }
+
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.8); } }
+
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    color: var(--dark);
+    max-width: 900px;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 .accent { color: var(--orange); }
+  .hero h1 .edition {
+    display: inline-block;
+    background: var(--dark);
+    color: var(--white);
+    padding: 0 12px;
+    border-radius: 8px;
+    font-size: 0.85em;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  .hero-sub {
+    font-size: 18px;
+    color: var(--mid);
+    max-width: 600px;
+    margin: 20px auto 0;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 36px;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .hero-meta-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+  .hero-meta-item .value { font-family: 'Syne', sans-serif; font-size: 16px; font-weight: 700; color: var(--dark); }
+
+  .hero-divider { width: 1px; height: 40px; background: var(--border); }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { background: var(--orange-deep); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,114,12,0.3); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--dark);
+    border: 1.5px solid var(--border);
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--orange); color: var(--orange); background: var(--orange-pale); }
+
+  .hero-scroll {
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--orange), transparent); animation: scrollDown 1.8s ease-in-out infinite; }
+
+  @keyframes scrollDown { 0% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+  /* ── SECTION BASICS ── */
+  section { padding: 90px 5%; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::before { content: ''; display: block; width: 24px; height: 2px; background: var(--orange); }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-body {
+    font-size: 16px;
+    color: var(--mid);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* ── COUNTDOWN ── */
+  .countdown-section {
+    background: var(--dark2);
+    padding: 48px 5%;
+  }
+
+  .countdown-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .countdown-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange-mid);
+    font-weight: 500;
+  }
+
+  .countdown-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: clamp(20px, 3vw, 28px);
+    color: white;
+  }
+
+  .countdown-units {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .countdown-number {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(44px, 8vw, 72px);
+    line-height: 1;
+    color: var(--orange);
+    min-width: 80px;
+    text-align: center;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 8px 12px;
+  }
+
+  .countdown-unit-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    font-weight: 500;
+  }
+
+  .countdown-sep {
+    font-family: 'Syne', sans-serif;
+    font-size: 36px;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+
+  /* ── WHAT IS THIS ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-image-wrap {
+    position: relative;
+  }
+
+  .principle-card {
+    background: var(--dark);
+    color: white;
+    padding: 36px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .principle-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-family: 'Syne', sans-serif;
+    font-size: 180px;
+    color: var(--orange);
+    opacity: 0.12;
+    line-height: 1;
+  }
+
+  .principle-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .principle-text .highlight { color: var(--orange-mid); }
+
+  .principle-attribution {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+    margin-top: 16px;
+  }
+
+  .stat-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .stat-chip {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 14px 18px;
+  }
+
+  .stat-chip-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--orange-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .stat-chip-text .num { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; color: var(--dark); line-height: 1.2; }
+  .stat-chip-text .desc { font-size: 13px; color: var(--muted); }
+
+  /* ── TRACKS ── */
+  .tracks-section { background: var(--white); }
+
+  .tracks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+  }
+
+  .track-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+  }
+
+  .track-header {
+    padding: 28px 28px 20px;
+    border-bottom: 1.5px solid var(--border);
+  }
+
+  .track-header.orange { background: var(--orange-pale); border-bottom-color: #F5D5BC; }
+  .track-header.green { background: var(--green-light); border-bottom-color: #C2E0AA; }
+
+  .track-number {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .track-number.orange { color: var(--orange); }
+  .track-number.green { color: var(--green); }
+
+  .track-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .track-tagline { font-size: 14px; color: var(--mid); }
+
+  .track-body { padding: 24px 28px; background: var(--white); }
+
+  .track-detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+
+  .track-detail-row:last-child { border-bottom: none; }
+
+  .track-detail-label { color: var(--muted); font-weight: 500; min-width: 90px; flex-shrink: 0; }
+  .track-detail-value { color: var(--dark); }
+
+  .prize-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .prize-pill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    border-radius: 10px;
+    padding: 10px 8px;
+    border: 1.5px solid var(--border);
+  }
+
+  .prize-pill.gold { background: #FFF9E6; border-color: #F0D060; }
+  .prize-pill.silver { background: #F6F6F6; border-color: #CCCCCC; }
+  .prize-pill.bronze { background: #FFF3EE; border-color: #E8B89A; }
+
+  .prize-rank { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; color: var(--muted); margin-bottom: 4px; }
+  .prize-amount { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--dark); }
+
+  /* ── PHASES ── */
+  .phases-section { background: var(--bg); }
+
+  .phases-wrap {
+    max-width: 1100px;
+    margin: 56px auto 0;
+  }
+
+  .phase-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .phase-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 4px;
+  }
+
+  .phase-bubble {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .phase-line {
+    width: 2px;
+    flex: 1;
+    min-height: 60px;
+    background: linear-gradient(to bottom, var(--orange), var(--border));
+    margin-top: 8px;
+  }
+
+  .phase-last .phase-line { display: none; }
+
+  .phase-content {
+    padding: 4px 0 52px 28px;
+  }
+
+  .phase-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .phase-date {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+
+  .phase-desc { font-size: 15px; color: var(--mid); line-height: 1.65; margin-bottom: 16px; }
+
+  .phase-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .phase-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--mid);
+  }
+
+  .phase-checklist li::before {
+    content: '✓';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    background: var(--green-light);
+    color: var(--green);
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  /* ── DOMAINS ── */
+  .domains-section { background: var(--white); }
+
+  .domains-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+  }
+
+  .domain-card {
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    background: var(--white);
+    transition: all 0.2s;
+    cursor: default;
+  }
+
+  .domain-card:hover {
+    border-color: var(--orange);
+    background: var(--orange-pale);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(232,114,12,0.12);
+  }
+
+  .domain-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .domain-number {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 6px;
+  }
+
+  .domain-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+
+  .domain-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+  /* ── TIMELINE ── */
+  .timeline-section { background: var(--bg); }
+
+  .timeline-tracks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+  }
+
+  .timeline-track-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--dark);
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--orange);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .timeline-track-title .track-tag {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: var(--orange-pale);
+    color: var(--orange);
+    margin-left: auto;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 4px;
+    align-items: flex-start;
+  }
+
+  .timeline-date-col {
+    width: 100px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-top: 2px;
+  }
+
+  .timeline-date {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+
+  .timeline-dot-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    flex-shrink: 0;
+    padding-top: 6px;
+  }
+
+  .t-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+  .t-dot.green-dot { background: var(--green-mid); }
+  .t-dot.finale { background: var(--dark); width: 14px; height: 14px; }
+
+  .t-vline { width: 2px; background: var(--border); flex: 1; min-height: 28px; }
+
+  .timeline-event-col { padding-top: 0; padding-bottom: 24px; flex: 1; }
+
+  .timeline-event-name {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--dark);
+    line-height: 1.3;
+  }
+
+  .timeline-event-name.finale-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--orange);
+  }
+
+  .timeline-event-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* ── INNOVATION IDEAS ── */
+  .ideas-section { background: var(--dark2); }
+
+  .ideas-section .section-label { color: var(--orange-mid); }
+  .ideas-section .section-title { color: white; }
+  .ideas-section .section-body { color: rgba(255,255,255,0.6); }
+
+  .ideas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+  }
+
+  .idea-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 24px;
+    transition: all 0.2s;
+  }
+
+  .idea-card:hover {
+    background: rgba(232,114,12,0.1);
+    border-color: rgba(232,114,12,0.4);
+    transform: translateY(-3px);
+  }
+
+  .idea-domain-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: rgba(232,114,12,0.2);
+    color: var(--orange-mid);
+    margin-bottom: 12px;
+  }
+
+  .idea-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: white;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .idea-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.6; margin-bottom: 14px; }
+
+  .idea-challenge {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 12px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .idea-challenge strong { color: var(--orange-mid); }
+
+  /* ── INNOVATION BAR ── */
+  .bar-section { background: var(--white); }
+
+  .bar-two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+  }
+
+  .bar-col-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .bar-col-title .icon-pass { color: var(--green); }
+  .bar-col-title .icon-fail { color: #CC3333; }
+
+  .bar-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+
+  .bar-item:last-child { border-bottom: none; }
+  .bar-item .tick { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+  .core-test-box {
+    background: var(--dark);
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 700px;
+    margin: 40px auto 0;
+    text-align: center;
+  }
+
+  .core-test-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--orange-mid); font-weight: 600; margin-bottom: 12px; }
+
+  .core-test-q {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: white;
+    line-height: 1.4;
+  }
+
+  .core-test-q .q-highlight { color: var(--orange); }
+
+  /* ── ELIGIBILITY ── */
+  .eligibility-section { background: var(--bg); }
+
+  .elig-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 1100px;
+    margin: 48px auto 0;
+  }
+
+  .elig-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .elig-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+
+  .elig-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .elig-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  .disq-list {
+    background: #FFF5F5;
+    border: 1.5px solid #FFCCCC;
+    border-radius: 14px;
+    padding: 24px 28px;
+    max-width: 700px;
+    margin: 32px auto 0;
+  }
+
+  .disq-list h3 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #CC3333;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .disq-list ul { list-style: none; }
+  .disq-list ul li {
+    font-size: 14px;
+    color: #773333;
+    padding: 7px 0;
+    border-bottom: 1px solid #FFD5D5;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .disq-list ul li:last-child { border-bottom: none; }
+  .disq-list ul li::before { content: '×'; font-weight: 700; color: #CC3333; flex-shrink: 0; }
+
+  /* ── JUDGING ── */
+  .judging-section { background: var(--white); }
+
+  .rubric-table {
+    width: 100%;
+    max-width: 900px;
+    margin: 48px auto 0;
+    border-collapse: separate;
+    border-spacing: 0 8px;
+  }
+
+  .rubric-table thead th {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+    padding: 0 16px 8px;
+    text-align: left;
+  }
+
+  .rubric-row td {
+    background: var(--bg);
+    padding: 16px;
+    vertical-align: top;
+  }
+
+  .rubric-row td:first-child { border-radius: 10px 0 0 10px; }
+  .rubric-row td:last-child { border-radius: 0 10px 10px 0; text-align: right; }
+
+  .rubric-criterion {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .rubric-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  .rubric-weight {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: var(--orange);
+  }
+
+  .rubric-weight-label { font-size: 11px; color: var(--muted); font-weight: 400; }
+
+  .bonus-awards {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 32px auto 0;
+    justify-content: center;
+  }
+
+  .bonus-pill {
+    background: var(--orange-pale);
+    border: 1.5px solid #F5C09A;
+    border-radius: 10px;
+    padding: 12px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 220px;
+    flex: 1;
+  }
+
+  .bonus-pill-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; color: var(--orange-deep); }
+  .bonus-pill-desc { font-size: 12px; color: var(--mid); }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--bg); }
+
+  .faq-list {
+    max-width: 760px;
+    margin: 48px auto 0;
+  }
+
+  .faq-item {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: var(--white);
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--dark);
+    text-align: left;
+    gap: 16px;
+    transition: background 0.2s;
+  }
+
+  .faq-question:hover { background: var(--orange-pale); }
+
+  .faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+    color: var(--orange);
+    transition: transform 0.3s;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s;
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+    padding: 0 24px;
+  }
+
+  .faq-item.open .faq-answer { max-height: 400px; padding-bottom: 20px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-question { background: var(--orange-pale); }
+
+  /* ── CONTACT ── */
+  .contact-section { background: var(--dark2); }
+
+  .contact-section .section-label { color: var(--orange-mid); }
+  .contact-section .section-title { color: white; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: 48px auto 0;
+  }
+
+  .contact-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 24px;
+  }
+
+  .contact-role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--orange-mid); font-weight: 600; margin-bottom: 8px; }
+  .contact-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: white; margin-bottom: 10px; }
+  .contact-phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 40px 5%;
+    text-align: center;
+  }
+
+  .footer-logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+
+  .footer-brand-text {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+  }
+
+  .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+  .footer-nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+  .footer-nav a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+  .footer-nav a:hover { color: var(--orange-mid); }
+  .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .about-grid, .tracks-grid, .timeline-tracks, .bar-two-col { grid-template-columns: 1fr; }
+    .domains-grid { grid-template-columns: repeat(2, 1fr); }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 36px; }
+    .countdown-number { font-size: 40px; min-width: 64px; }
+    .phase-row { grid-template-columns: 48px 1fr; }
+  }
+
+  /* ── Entrance animations ── */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-brand">
+    <img src="data:image/jpeg;base64,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" alt="NUESA Logo" class="nav-logo">
+    <div class="nav-title">
+      DADDY G.O CHALLENGE 4.0
+      <span>NUESA UNIBEN · July 10, 2026</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#tracks">Tracks</a></li>
+    <li><a href="#phases">How It Works</a></li>
+    <li><a href="#domains">Domains</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#ideas">Ideas</a></li>
+    <li><a href="#eligibility">Eligibility</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-badge">Registrations Now Open</div>
+  <p class="hero-eyebrow">NUESA UNIBEN · University of Benin</p>
+  <h1>
+    Daddy G.O<br>
+    <span class="accent">Innovation</span>
+    Challenge<span class="edition">4.0</span>
+  </h1>
+  <p class="hero-sub">Build what matters. Solve a real Nigerian problem with hardware that changes lives — not just demos that impress a panel.</p>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">Grand Finale</span>
+      <span class="value">July 10, 2026</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">
+      <span class="label">Venue</span>
+      <span class="value">University of Benin</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">
+      <span class="label">Expected Attendance</span>
+      <span class="value">500+</span>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-meta-item">
+      <span class="label">Total Prize Pool</span>
+      <span class="value">₦3,600,000</span>
+    </div>
+  </div>
+
+  <div class="hero-actions">
+    <a href="#phases" class="btn-primary">How to Enter →</a>
+    <a href="#tracks" class="btn-secondary">View Tracks</a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<div class="countdown-section">
+  <div class="countdown-inner">
+    <p class="countdown-label">Grand Finale Countdown</p>
+    <p class="countdown-title">Thursday, July 10, 2026 · University of Benin</p>
+    <div class="countdown-units">
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-days">--</div>
+        <div class="countdown-unit-label">Days</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-hours">--</div>
+        <div class="countdown-unit-label">Hours</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-mins">--</div>
+        <div class="countdown-unit-label">Minutes</div>
+      </div>
+      <div class="countdown-sep">:</div>
+      <div class="countdown-unit">
+        <div class="countdown-number" id="cd-secs">--</div>
+        <div class="countdown-unit-label">Seconds</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about-grid" id="about" style="padding: 90px 5%;">
+  <div class="fade-up">
+    <div class="section-label">What This Is</div>
+    <h2 class="section-title">Engineering that solves real problems</h2>
+    <p class="section-body">
+      The Daddy G.O Innovation Challenge is an annual engineering competition hosted by NUESA UNIBEN. Now in its 4th edition, this year introduces a mandatory Design Phase before any hardware is built — because a device that nobody needed is not an innovation.
+    </p>
+    <p class="section-body" style="margin-top: 16px;">
+      Open to all UNIBEN students across all faculties. Mixed-faculty teams are explicitly encouraged and separately recognised. If you understand the problem, we want you here.
+    </p>
+    <div class="stat-chips">
+      <div class="stat-chip">
+        <div class="stat-chip-icon">🏆</div>
+        <div class="stat-chip-text">
+          <div class="num">₦3,600,000</div>
+          <div class="desc">Total prizes across both competition tracks</div>
+        </div>
+      </div>
+      <div class="stat-chip">
+        <div class="stat-chip-icon">🏛</div>
+        <div class="stat-chip-text">
+          <div class="num">4th Edition</div>
+          <div class="desc">Building on the Smart Lawnmower, Torque Nova, and more</div>
+        </div>
+      </div>
+      <div class="stat-chip">
+        <div class="stat-chip-icon">👥</div>
+        <div class="stat-chip-text">
+          <div class="num">All Faculties</div>
+          <div class="desc">Any enrolled UNIBEN student can compete</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fade-up">
+    <div class="principle-card">
+      <div class="principle-text">
+        "If your device exists on AliExpress for less than what you'll spend building it,
+        <span class="highlight">you haven't innovated.</span>
+        Innovation means someone's problem gets solved that wasn't being solved before.
+        <span class="highlight">Start with the problem.</span>
+        The device is just the answer."
+      </div>
+      <div class="principle-attribution">— Governing principle, Daddy G.O Innovation Challenge 4.0</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section class="tracks-section" id="tracks">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Competition Tracks</div>
+    <h2 class="section-title">Two ways to compete</h2>
+    <p class="section-body">Both tracks culminate at the same Grand Finale on July 10, 2026.</p>
+
+    <div class="tracks-grid fade-up">
+      <div class="track-card">
+        <div class="track-header orange">
+          <div class="track-number orange">Track 01</div>
+          <div class="track-name">Innovation Challenge</div>
+          <div class="track-tagline">Hardware-focused. Problem-driven. Open to all faculties.</div>
+        </div>
+        <div class="track-body">
+          <div class="track-detail-row">
+            <span class="track-detail-label">Open to</span>
+            <span class="track-detail-value">All currently enrolled UNIBEN students</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Team size</span>
+            <span class="track-detail-value">Individual or up to 4 members</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Deliverable</span>
+            <span class="track-detail-value">Physical working prototype + design document + live defence</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Format</span>
+            <span class="track-detail-value">3-phase: Design → Build → Grand Finale</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Registration</span>
+            <span class="track-detail-value">Closed May 30, 2026</span>
+          </div>
+          <div class="prize-row">
+            <div class="prize-pill gold">
+              <div class="prize-rank">1st</div>
+              <div class="prize-amount">₦1,000,000</div>
+            </div>
+            <div class="prize-pill silver">
+              <div class="prize-rank">2nd</div>
+              <div class="prize-amount">₦500,000</div>
+            </div>
+            <div class="prize-pill bronze">
+              <div class="prize-rank">3rd</div>
+              <div class="prize-amount">₦300,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="track-card">
+        <div class="track-header green">
+          <div class="track-number green">Track 02</div>
+          <div class="track-name">Science & Mathematics Competition</div>
+          <div class="track-tagline">Academic rigour. Fast thinking. 100 & 300-level students.</div>
+        </div>
+        <div class="track-body">
+          <div class="track-detail-row">
+            <span class="track-detail-label">Open to</span>
+            <span class="track-detail-value">100-level and 300-level UNIBEN students</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Format</span>
+            <span class="track-detail-value">Stage 1 Aptitude Test → Stage 2 Brain Teaser → Grand Finale Quiz</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Subjects</span>
+            <span class="track-detail-value">A-level Mathematics, Logic, General Science</span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Registration</span>
+            <span class="track-detail-value"><strong style="color: var(--green);">Closes June 6, 2026</strong></span>
+          </div>
+          <div class="track-detail-row">
+            <span class="track-detail-label">Bonus</span>
+            <span class="track-detail-value">Certificates of Excellence for all Stage 2 qualifiers</span>
+          </div>
+          <div class="prize-row">
+            <div class="prize-pill gold">
+              <div class="prize-rank">1st</div>
+              <div class="prize-amount">₦1,000,000</div>
+            </div>
+            <div class="prize-pill silver">
+              <div class="prize-rank">2nd</div>
+              <div class="prize-amount">₦500,000</div>
+            </div>
+            <div class="prize-pill bronze">
+              <div class="prize-rank">3rd</div>
+              <div class="prize-amount">₦300,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHASES -->
+<section class="phases-section" id="phases">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">How The Innovation Challenge Works</div>
+    <h2 class="section-title">Three phases from idea to Grand Finale</h2>
+    <p class="section-body">No team builds anything before their problem has been evaluated. That's the rule. That's why this edition is different.</p>
+
+    <div class="phases-wrap fade-up">
+
+      <div class="phase-row">
+        <div class="phase-left">
+          <div class="phase-bubble">1</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-date">June 1 – June 14, 2026</div>
+          <div class="phase-title">Design Phase Submission</div>
+          <p class="phase-desc">Prove the problem. Plan the solution. Pass the innovation gate. Every team submits a written design document before any hardware is built. Judges evaluate your proposal blindly — they don't know your name, only your idea.</p>
+          <ul class="phase-checklist">
+            <li>Problem Statement — with real numbers, real people, real harm</li>
+            <li>Solution Overview — what the device does, exactly</li>
+            <li>Hardware Justification — not a shopping list, a reasoned component plan</li>
+            <li>Software/Logic Design — a flowchart that shows what happens when things go wrong</li>
+            <li>Preliminary Component Budget — sourced from Nigerian suppliers</li>
+            <li>Innovation Statement — why this needs to exist</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-row">
+        <div class="phase-left">
+          <div class="phase-bubble">2</div>
+          <div class="phase-line"></div>
+        </div>
+        <div class="phase-content">
+          <div class="phase-date">June 23 – July 2, 2026</div>
+          <div class="phase-title">Build & Mentorship Week</div>
+          <p class="phase-desc">Shortlisted teams are assigned mentors based on their specific design — not generic tutorials. You build your prototype, document the process, and prepare for the final presentation. Mentors help. You build.</p>
+          <ul class="phase-checklist">
+            <li>Access to workshop facilities and assigned technical mentor</li>
+            <li>Working prototype (or functional partial prototype with documentation)</li>
+            <li>Build documentation — what changed from your design, and why</li>
+            <li>2–3 minute video demonstration submitted by July 2nd</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="phase-row phase-last">
+        <div class="phase-left">
+          <div class="phase-bubble" style="background: var(--dark);">3</div>
+        </div>
+        <div class="phase-content" style="padding-bottom: 0;">
+          <div class="phase-date">July 10, 2026 · Grand Finale</div>
+          <div class="phase-title">Demonstrate. Defend. Win.</div>
+          <p class="phase-desc">Top teams present live to a panel of judges drawn equally from academia and industry. This is not a sales pitch — it is an engineering defence. You explain your design decisions, what failed, what you changed, and what measurable improvement your device achieves.</p>
+          <ul class="phase-checklist">
+            <li>8-minute live demonstration and presentation</li>
+            <li>7-minute judges' Q&A — defend every decision</li>
+            <li>Judges' deliberation and scoring</li>
+            <li>Award ceremony — ₦1,000,000 first prize</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOMAINS -->
+<section class="domains-section" id="domains">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Thematic Domains</div>
+    <h2 class="section-title">Six problem spaces to choose from</h2>
+    <p class="section-body">Every team must declare their domain at registration. Judges are allocated to domains where they have direct expertise.</p>
+
+    <div class="domains-grid fade-up">
+      <div class="domain-card">
+        <span class="domain-icon">🏥</span>
+        <div class="domain-number">Domain 01</div>
+        <div class="domain-name">Health & Safety</div>
+        <p class="domain-desc">Disease prevention, accident reduction, home and workplace hazards, emergency response, medical monitoring. Generator-related deaths, road accidents, contaminated water, counterfeit drugs.</p>
+      </div>
+      <div class="domain-card">
+        <span class="domain-icon">🌾</span>
+        <div class="domain-number">Domain 02</div>
+        <div class="domain-name">Agriculture & Food Security</div>
+        <p class="domain-desc">Crop loss, post-harvest spoilage, soil and water quality, irrigation, pest detection, cold chain. Nigeria loses an estimated 40% of food to post-harvest spoilage.</p>
+      </div>
+      <div class="domain-card">
+        <span class="domain-icon">⚡</span>
+        <div class="domain-number">Domain 03</div>
+        <div class="domain-name">Energy & Power</div>
+        <p class="domain-desc">Load management, generator safety, renewable energy optimisation, electricity theft detection, power quality monitoring.</p>
+      </div>
+      <div class="domain-card">
+        <span class="domain-icon">💧</span>
+        <div class="domain-number">Domain 04</div>
+        <div class="domain-name">Water & Environment</div>
+        <p class="domain-desc">Water quality monitoring, flood detection and warning, waste management, and environmental contamination. Benin City floods annually with no localised warning system.</p>
+      </div>
+      <div class="domain-card">
+        <span class="domain-icon">🛒</span>
+        <div class="domain-number">Domain 05</div>
+        <div class="domain-name">Commerce & Trade</div>
+        <p class="domain-desc">Fuel adulteration, counterfeit product detection, market logistics, payment security, and supply chain integrity.</p>
+      </div>
+      <div class="domain-card">
+        <span class="domain-icon">🎓</span>
+        <div class="domain-number">Domain 06</div>
+        <div class="domain-name">Campus & Community</div>
+        <p class="domain-desc">Problems specific to UNIBEN or Benin City — safety, infrastructure, logistics, accessibility, student welfare. The most buildable innovations often come from problems you live with daily.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section" id="timeline">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Key Dates</div>
+    <h2 class="section-title">Mark your calendar</h2>
+    <p class="section-body">All dates are active or upcoming as of June 1, 2026. Registration for both tracks is now open.</p>
+
+    <div class="timeline-tracks fade-up">
+      <div>
+        <div class="timeline-track-title">
+          Innovation Challenge
+          <span class="track-tag">Hardware</span>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">June 1–14</div></div>
+          <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Design Phase Submission Window</div><div class="timeline-event-sub">Submit your written design document</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">June 20</div></div>
+          <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Design Phase Results</div><div class="timeline-event-sub">Shortlisted teams notified</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">June 23–27</div></div>
+          <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Mentorship & Workshop Week</div><div class="timeline-event-sub">Build with guidance from assigned mentors</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">July 2</div></div>
+          <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Build Review</div><div class="timeline-event-sub">Prototype progress evaluation</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">July 8</div></div>
+          <div class="timeline-dot-col"><div class="t-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Innovation Exhibition</div><div class="timeline-event-sub">Public preview of all finalist projects</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">July 10</div></div>
+          <div class="timeline-dot-col"><div class="t-dot finale"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name finale-name">Grand Finale & Awards</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="timeline-track-title">
+          Science & Mathematics
+          <span class="track-tag" style="background: var(--green-light); color: var(--green);">Academic</span>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">June 6</div></div>
+          <div class="timeline-dot-col"><div class="t-dot green-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col">
+            <div class="timeline-event-name" style="color: var(--green); font-weight: 700;">Registration Closes</div>
+            <div class="timeline-event-sub">Register before this date to participate</div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">June 20</div></div>
+          <div class="timeline-dot-col"><div class="t-dot green-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Stage 1 — Aptitude Test</div><div class="timeline-event-sub">1 hour: A-level Maths, Logic, General Science</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">June 27</div></div>
+          <div class="timeline-dot-col"><div class="t-dot green-dot"></div><div class="t-vline"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name">Stage 2 — Brain Teaser Round</div><div class="timeline-event-sub">30 minutes, rapid-fire Maths and Science</div></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date-col"><div class="timeline-date">July 10</div></div>
+          <div class="timeline-dot-col"><div class="t-dot finale"></div></div>
+          <div class="timeline-event-col"><div class="timeline-event-name finale-name">Grand Finale Quiz & Awards</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATION IDEAS -->
+<section class="ideas-section" id="ideas">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Seeded Problem Directions</div>
+    <h2 class="section-title">Need a starting point?</h2>
+    <p class="section-body">These are examples of the calibre of problem this challenge is looking for. Teams are not required to choose from this list — but every submission must meet this standard.</p>
+
+    <div class="ideas-grid fade-up">
+      <div class="idea-card">
+        <span class="idea-domain-tag">Health & Safety</span>
+        <div class="idea-title">Generator CO Poisoning Interceptor</div>
+        <p class="idea-desc">Carbon monoxide from indoor generators kills hundreds of Nigerians annually. Cheap CO detectors beep — but victims lose consciousness before they can act.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> Reliable relay cutoff on generator ignition + GSM alert within a battery-backed enclosure that operates when mains power is out.</div>
+      </div>
+
+      <div class="idea-card">
+        <span class="idea-domain-tag">Water & Environment</span>
+        <div class="idea-title">Flood Early Warning Network</div>
+        <p class="idea-desc">Benin City floods annually with no localised warning infrastructure. Residents receive no advance notice before water enters their homes.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> Multi-node LoRa mesh with ultrasonic sensors at drainage chokepoints. No internet required. Solar-powered with 72-hour battery backup.</div>
+      </div>
+
+      <div class="idea-card">
+        <span class="idea-domain-tag">Commerce & Trade</span>
+        <div class="idea-title">Adulterated Fuel Detector</div>
+        <p class="idea-desc">Adulterated petrol destroys generators and engines. Industrial testers cost tens of thousands of dollars. No affordable point-of-purchase option exists in Nigeria.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> Handheld device using capacitive or optical sensing of fuel dielectric properties. Pass/fail result before you refuel.</div>
+      </div>
+
+      <div class="idea-card">
+        <span class="idea-domain-tag">Agriculture & Food Security</span>
+        <div class="idea-title">Post-Harvest Cold Shelf</div>
+        <p class="idea-desc">Market traders selling perishables have no access to cold storage. End-of-day loss selling is the norm — not the exception.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> PCM selection and thermal architecture — must maintain target temperature for 8–10 hours with zero active power draw during market hours.</div>
+      </div>
+
+      <div class="idea-card">
+        <span class="idea-domain-tag">Health & Safety</span>
+        <div class="idea-title">Anti-Sleep Alert for Drivers</div>
+        <p class="idea-desc">Commercial driver fatigue is a leading cause of mass-casualty accidents on Nigerian highways. No affordable embedded intervention currently exists.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> Infrared eye-tracking + head-position gyroscope, triggering haptic and audible alarms. Self-calibrating to the individual driver's baseline in darkness and vibration.</div>
+      </div>
+
+      <div class="idea-card">
+        <span class="idea-domain-tag">Water & Environment</span>
+        <div class="idea-title">Borehole Water Quality Guardian</div>
+        <p class="idea-desc">Communities rely on boreholes never tested after installation. Contamination causes chronic illness rarely traced back to the water source.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> Continuous pH, turbidity, conductivity, and temperature monitoring. Waterproof enclosure, long-term unattended operation, SMS reports to community leadership.</div>
+      </div>
+
+      <div class="idea-card">
+        <span class="idea-domain-tag">Health & Safety · Commerce & Trade</span>
+        <div class="idea-title">Smart Market Fire Alert Mesh</div>
+        <p class="idea-desc">Market fires in Nigeria are recurrent. Poor communication means fire spreads before any coordinated response reaches the scene.</p>
+        <div class="idea-challenge"><strong>Core challenge:</strong> LoRa mesh topology with fire localisation logic — the system must identify which stall the fire originated in, not just that fire exists somewhere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INNOVATION BAR -->
+<section class="bar-section" id="bar">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">The Innovation Bar</div>
+    <h2 class="section-title">What passes. What doesn't.</h2>
+    <p class="section-body">Judges evaluate against a clear standard. Know it before you submit.</p>
+
+    <div class="bar-two-col fade-up">
+      <div>
+        <div class="bar-col-title"><span class="icon-pass">✓</span> What Passes</div>
+        <div class="bar-item"><span class="tick">✓</span> You can name at least 20 specific people whose lives are measurably worse because this device doesn't exist</div>
+        <div class="bar-item"><span class="tick">✓</span> There is no affordable existing solution to this problem in Nigeria</div>
+        <div class="bar-item"><span class="tick">✓</span> Your device produces a physical, observable output — not just data on a screen</div>
+        <div class="bar-item"><span class="tick">✓</span> The problem came before the device — you didn't start with a component and build backwards</div>
+      </div>
+      <div>
+        <div class="bar-col-title"><span class="icon-fail">✕</span> What Fails</div>
+        <div class="bar-item"><span class="tick" style="color: #CC3333;">✕</span> The "innovation" is adding a microcontroller to something that already works fine without one</div>
+        <div class="bar-item"><span class="tick" style="color: #CC3333;">✕</span> The problem it solves is a first-world convenience, not a Nigerian necessity</div>
+        <div class="bar-item"><span class="tick" style="color: #CC3333;">✕</span> The device is primarily a demonstration of a technology rather than a solution to a problem</div>
+        <div class="bar-item"><span class="tick" style="color: #CC3333;">✕</span> Removing the electronics from the prototype would leave something that still mostly works</div>
+      </div>
+    </div>
+
+    <div class="core-test-box fade-up">
+      <div class="core-test-label">The Core Test — Ask Yourself</div>
+      <div class="core-test-q">
+        "If this device was given to its target user tomorrow, <span class="q-highlight">what specific thing would be different about their life in 30 days?</span>"
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="eligibility-section" id="eligibility">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Who Can Compete</div>
+    <h2 class="section-title">Eligibility & Rules</h2>
+    <p class="section-body">Open wider than it's ever been. Any UNIBEN student. Any faculty. Any problem worth solving.</p>
+
+    <div class="elig-grid fade-up">
+      <div class="elig-card">
+        <span class="elig-icon">🎓</span>
+        <div class="elig-title">Any UNIBEN Faculty</div>
+        <p class="elig-desc">All currently enrolled UNIBEN students are eligible regardless of faculty or department. A medical student who understands a health problem, paired with an engineer who can build the solution, is stronger than four engineers guessing at what patients need.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">👥</span>
+        <div class="elig-title">Team Size</div>
+        <p class="elig-desc">Compete individually or in teams of up to four members. A team leader must be designated as the primary point of contact. Mixed-faculty teams are encouraged and eligible for a dedicated recognition award.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">🔩</span>
+        <div class="elig-title">Hardware Required</div>
+        <p class="elig-desc">This is a hardware challenge. Software-only, app-only, or purely theoretical submissions are not eligible. The deliverable must be a physical device or system that produces observable output.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">📊</span>
+        <div class="elig-title">Problem Must Be Real</div>
+        <p class="elig-desc">Projects must address a demonstrable problem that affects real people in a measurable way. Decorative, aesthetic, or novelty devices are not eligible. Vague problem statements without evidence will not pass.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">💡</span>
+        <div class="elig-title">Original Work Only</div>
+        <p class="elig-desc">All projects must be original and not previously submitted to any other competition. Teams self-fund their hardware builds — cash prizes are awarded at the Grand Finale.</p>
+      </div>
+      <div class="elig-card">
+        <span class="elig-icon">🗺</span>
+        <div class="elig-title">Domain Declaration</div>
+        <p class="elig-desc">Each team must declare their thematic domain at registration. Multiple teams can work in the same domain — submissions are evaluated independently. Near-identical submissions will be investigated.</p>
+      </div>
+    </div>
+
+    <div class="disq-list fade-up">
+      <h3>⚠ Automatic Disqualification</h3>
+      <ul>
+        <li>No quantified problem statement — "many people face this" without evidence</li>
+        <li>Solutions to problems that do not meaningfully affect Nigerians</li>
+        <li>Commercial products that already exist affordably in Nigeria</li>
+        <li>Software-only or app-only submissions</li>
+        <li>Projects where the innovation is the aesthetic, not the function</li>
+        <li>Pre-built robotics kits assembled without significant original engineering contribution</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- JUDGING -->
+<section class="judging-section" id="judging">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">How You Will Be Scored</div>
+    <h2 class="section-title">Judging Framework</h2>
+    <p class="section-body">Judges are drawn equally from academia and industry. Phase 1 submissions are reviewed blindly — judges don't know which team submitted which document.</p>
+
+    <table class="rubric-table fade-up">
+      <thead>
+        <tr>
+          <th style="width: 60%">Criterion & What Judges Assess</th>
+          <th style="width: 20%; text-align:right">Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="rubric-row">
+          <td>
+            <div class="rubric-criterion">Problem Validity</div>
+            <div class="rubric-desc">Is the problem real, measurable, and significant to people in Nigeria? Is the evidence credible?</div>
+          </td>
+          <td><div class="rubric-weight">25%</div><div class="rubric-weight-label">of total score</div></td>
+        </tr>
+        <tr class="rubric-row">
+          <td>
+            <div class="rubric-criterion">Technical Merit</div>
+            <div class="rubric-desc">Does the engineering approach genuinely solve the stated problem? Is the design sound?</div>
+          </td>
+          <td><div class="rubric-weight">25%</div><div class="rubric-weight-label">of total score</div></td>
+        </tr>
+        <tr class="rubric-row">
+          <td>
+            <div class="rubric-criterion">Innovation</div>
+            <div class="rubric-desc">What does not already exist at this price point? What is genuinely new?</div>
+          </td>
+          <td><div class="rubric-weight">20%</div><div class="rubric-weight-label">of total score</div></td>
+        </tr>
+        <tr class="rubric-row">
+          <td>
+            <div class="rubric-criterion">Feasibility</div>
+            <div class="rubric-desc">Could this be built reliably? Are component choices realistic? Does the build hold up under scrutiny?</div>
+          </td>
+          <td><div class="rubric-weight">20%</div><div class="rubric-weight-label">of total score</div></td>
+        </tr>
+        <tr class="rubric-row">
+          <td>
+            <div class="rubric-criterion">Presentation</div>
+            <div class="rubric-desc">Clarity of explanation, quality of documentation, confidence in defending design decisions.</div>
+          </td>
+          <td><div class="rubric-weight">10%</div><div class="rubric-weight-label">of total score</div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="bonus-awards fade-up">
+      <div class="bonus-pill">
+        <div class="bonus-pill-title">Mixed-Faculty Award</div>
+        <div class="bonus-pill-desc">Highest-scoring team with members from more than one faculty</div>
+      </div>
+      <div class="bonus-pill">
+        <div class="bonus-pill-title">Most Buildable Award</div>
+        <div class="bonus-pill-desc">Strongest feasibility score — a simple device that works reliably beats a complex one that partially works</div>
+      </div>
+      <div class="bonus-pill">
+        <div class="bonus-pill-title">Community Impact Award</div>
+        <div class="bonus-pill-desc">Highest Problem Validity score, regardless of overall placement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Frequently Asked Questions</div>
+    <h2 class="section-title">Common questions answered</h2>
+    <p class="section-body">If something isn't covered here, reach out to the contacts below.</p>
+
+    <div class="faq-list fade-up">
+
+      <div class="faq-item">
+        <button class="faq-question">I'm not an engineering student. Can I still compete?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">Yes. This edition is open to all UNIBEN students regardless of faculty. A medical student who understands a health problem, paired with an engineering student who can build the solution, is explicitly encouraged. Mixed-faculty teams are eligible for a dedicated recognition award on top of the standard prizes.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do I need to have already built something to enter?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">No. Phase 1 is a written design document — no hardware required. Teams are not permitted to build anything before their design document has been evaluated. The point of Phase 1 is to prove the problem and plan the solution. Building happens in Phase 2, after shortlisting.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Is registration still open for the Innovation Challenge?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">Innovation Challenge registration closed on May 30, 2026. If you registered, your Design Phase submission window is now open (June 1–14). Science & Mathematics Competition registration is still open until June 6, 2026.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What is the Design Phase submission, and what does it need to include?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">The Design Phase submission is a written document that covers six areas: (1) Problem Statement with quantified evidence, (2) Solution Overview describing exactly what the device does, (3) Hardware Justification for each major component, (4) Software/Logic Design with a decision flowchart, (5) Preliminary Component Budget sourced from Nigerian suppliers, and (6) an Innovation Statement explaining why this needs to exist. The goal is the clearest document, not the longest.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Who funds the hardware build?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">Teams are responsible for sourcing and funding their own hardware. Cash prizes are awarded at the Grand Finale. The Mentorship & Workshop Week in June provides access to facilities, guidance, and mentors — but the physical components are the team's responsibility.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can multiple teams work on the same problem?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">Yes. Teams are not penalised for working in the same domain. All submissions are evaluated independently. However, if two teams submit near-identical problem statements and proposed solutions, both will be contacted before shortlisting to confirm independent development.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How does the judging work at the Grand Finale?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">Teams get 8 minutes for live demonstration and presentation, followed by 7 minutes of judges' Q&A. Judges score independently before discussing. Scores are averaged. In a tie, Problem Validity and Technical Merit scores take precedence. The judging panel is drawn equally from academia and industry — no judge evaluates a project from a team they have advised or supervised.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does the Science/Mathematics Competition involve?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">The Science/Maths Competition has three stages. Stage 1 (June 20) is a 1-hour written aptitude test covering A-level Mathematics, logical reasoning, and general science. Stage 2 (June 27) is a 30-minute rapid-fire brain teaser session — participants are selected from Stage 1 results. Stage 3 is the Grand Finale Quiz Finals on July 10. All Stage 2 qualifiers receive Certificates of Excellence.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I compete in both tracks?<span class="faq-icon">+</span></button>
+        <div class="faq-answer">Innovation Challenge registration has closed (May 30). Science & Mathematics registration is open until June 6. If you registered for the Innovation Challenge before May 30, you are also eligible to register for the Science & Mathematics Competition separately — provided you meet the eligibility criteria (100-level or 300-level student).</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Contact the organising team</h2>
+
+    <div class="contact-grid fade-up">
+      <div class="contact-card">
+        <div class="contact-role">NUESA UNIBEN President</div>
+        <div class="contact-name">Afolabi Farouk Akande</div>
+        <div class="contact-phone">📞 09012559638</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-role">Event Chairman & Director of Programs</div>
+        <div class="contact-name">Adeleke Uwijesunuzo Divine</div>
+        <div class="contact-phone">📞 08056469293</div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-role">Secretary General, NUESA UNIBEN</div>
+        <div class="contact-name">Issah Muhammed</div>
+        <div class="contact-phone">📞 08163308520</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 40px; text-align: center;">
+      <p style="font-size: 14px; color: rgba(255,255,255,0.4);">Follow NUESA UNIBEN on Instagram and LinkedIn for real-time updates.</p>
+      <p style="font-size: 13px; color: rgba(255,255,255,0.25); margin-top: 8px;">University of Benin, Benin City, Edo State, Nigeria</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo-row">
+    <img src="data:image/jpeg;base64,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" alt="NUESA" class="footer-logo">
+    <div class="footer-brand-text">Daddy G.O Innovation Challenge 4.0</div>
+  </div>
+  <p class="footer-tagline">NUESA UNIBEN · University of Benin, Benin City, Edo State · Grand Finale: July 10, 2026</p>
+  <nav class="footer-nav">
+    <a href="#about">About</a>
+    <a href="#tracks">Tracks</a>
+    <a href="#phases">How It Works</a>
+    <a href="#domains">Domains</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#ideas">Innovation Ideas</a>
+    <a href="#eligibility">Eligibility</a>
+    <a href="#judging">Judging</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <p class="footer-copy">© 2026 NUESA UNIBEN. Towards Indigenuous Technological Advancement.</p>
+</footer>
+
+<script>
+  // Countdown
+  function updateCountdown() {
+    var target = new Date('July 10, 2026 09:00:00').getTime();
+    var now = new Date().getTime();
+    var diff = target - now;
+    if (diff <= 0) {
+      document.getElementById('cd-days').textContent = '00';
+      document.getElementById('cd-hours').textContent = '00';
+      document.getElementById('cd-mins').textContent = '00';
+      document.getElementById('cd-secs').textContent = '00';
+      return;
+    }
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var secs = Math.floor((diff % (1000 * 60)) / 1000);
+    document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+    document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Scroll fade-in
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
